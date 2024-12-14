@@ -5,47 +5,72 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Personal Profile Grid Layout</title>
+        <title>Personal Profile Web Page</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap) -->
+        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <style>
-            .grid-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
+            body {
+                font-family: Arial, sans-serif;
             }
-            .grid-item {
-                padding: 20px;
-                border-radius: 8px;
-                color: white;
-            }
-            .bg-dark {
-                background-color: #343a40;
-            }
-            .bg-primary {
-                background-color: #007bff;
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
             }
             .gallery-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                display: flex;
+                flex-wrap: wrap;
                 gap: 10px;
+                justify-content: center;
             }
-            .gallery-container img {
+            .gallery-item {
+                flex: 1 1 calc(33.333% - 10px); /* Make items flexible for responsiveness */
+                max-width: calc(33.333% - 10px);
+                box-sizing: border-box;
+            }
+            .gallery-item img {
                 width: 100%;
                 height: auto;
                 border-radius: 8px;
-                object-fit: cover;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .row > .col-sm-4 {
+                margin-bottom: 20px;
             }
         </style>
     </head>
     <body>
-        <div class="container mt-4">
-            <h1 class="text-center mb-4">Personal Profile Web Page</h1>
-            <div class="grid-container">
-                <!-- First Line -->
-                <div class="grid-item bg-primary">
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page content-->
+        <div class="container-fluid">
+            <h1>Personal Profile Web Page</h1>
+            <div class="row mt-3">
+                <div class="col-sm-4 p-3 bg-primary text-white">
                     <h3>About Me</h3>
                     <p>Marianne Ellise P. Lama</p>
                     <p>mplama@student.apc.edu.ph</p>
@@ -55,10 +80,10 @@
                         <a href="https://www.linkedin.com/in/marianne-ellise-lama-3b0840289/" target="_blank" class="text-white">LinkedIn</a>
                     </p>
                     <p>
-                        I am a second-year student at Asia Pacific College. I was born and raised in Taguig City. I've always loved and enjoyed going out since I was a kid. I've been exposed to all types of adventures because my family loves to go out and spend time together.
+                        I am a second-year student at Asia Pacific College. I was born and raised in Taguig City. I've always loved and enjoyed going out since I was a kid. I enjoyed doing some outdoor activities specially when it comes to nature. I also liked to swim. I am  also passionate about personal growth and continuously strive to improve myself, both academically and personally.
                     </p>
                 </div>
-                <div class="grid-item bg-dark">
+                <div class="col-sm-4 p-3 bg-dark text-white">
                     <h3>Education / Achievements</h3>
                     <ul>
                         <li>Finished High School at Signal Village National High School.</li>
@@ -67,16 +92,14 @@
                         <li>Graduated High School & Senior High with Honors.</li>
                     </ul>
                 </div>
-                <div class="grid-item bg-primary">
+                <div class="col-sm-4 p-3 bg-primary text-white">
                     <h3>IT Experience</h3>
                     <ul>
                         <li>Programming</li>
                         <li>Code Combat</li>
-                        <li>Gaming</li>
                     </ul>
                 </div>
-                <!-- Second Line -->
-                <div class="grid-item bg-dark">
+                <div class="col-sm-4 p-3 bg-dark text-white">
                     <h3>Hobbies & Interests</h3>
                     <ul>
                         <li>Camping</li>
@@ -86,25 +109,36 @@
                         <li>Travelling</li>
                     </ul>
                 </div>
-                <div class="grid-item bg-primary">
-                    <h3>Goals In Life / Dreams</h3>
+                <div class="col-sm-4 p-3 bg-primary text-white">
+                    <h3>Goals In Life / Dream</h3>
                     <p>
                         To live a life of purpose means embracing every moment, seeking out new horizons, and ensuring that the ones you care for are supported and secure. It’s about turning each day into an opportunity to grow, explore, and give back, building a future filled with adventure and responsibility.
+                 <li>To be succesfull</li>
+                 <li>To give back to those who believe in me</li>
+                 <li>To never forget to enjoy life</li>
+                 <li>Maintain a Healthy Lifestyle</li>
+                 <li>Adventure and Exploration</li>
                     </p>
                 </div>
-                <!-- Third Line -->
-                <div class="grid-item bg-dark" style="grid-column: span 3;">
+                <div class="col-sm-4 p-3 bg-dark text-white">
                     <h3>Picture Gallery</h3>
                     <p>I like to spend time alone with nature.</p>
                     <div class="gallery-container">
-                        <img src="https://github.com/Marianne-101/Webprog_Personal-Website/blob/main/Images/camping.jpg?raw=true" alt="Camping">
-                        <img src="https://github.com/Marianne-101/Webprog_Personal-Website/blob/main/Images/ocean.jpg?raw=true" alt="Ocean">
-                        <img src="https://github.com/Marianne-101/Webprog_Personal-Website/blob/main/Images/picture%20of%20me.jpg?raw=true" alt="My Picture">
+                        <div class="gallery-item">
+                            <img src="https://github.com/Marianne-101/Webprog_Personal-Website/blob/main/Images/camping.jpg?raw=true" alt="Camping">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://github.com/Marianne-101/Webprog_Personal-Website/blob/main/Images/ocean.jpg?raw=true" alt="Ocean">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://github.com/Marianne-101/Webprog_Personal-Website/blob/main/Images/picture%20of%20me.jpg?raw=true" alt="My Picture">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Bootstrap core JS -->
+
+        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
